@@ -9,7 +9,7 @@
         <!--Home View Controller-->
         <scene sceneID="eDf-hm-hpu">
             <objects>
-                <viewController id="n6X-wJ-dDA" customClass="homeViewController" customModule="Drawing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n6X-wJ-dDA" customClass="HomeViewController" customModule="Drawing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="62J-ni-e6u"/>
                         <viewControllerLayoutGuide type="bottom" id="pGR-Fu-f6z"/>
@@ -18,9 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Irw-a9-iI8">
-                                <frame key="frameInset" width="123" height="768"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Irw-a9-iI8">
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeN-SG-aC8">
                                         <frame key="frameInset" minX="8" minY="8" width="107" height="89"/>
@@ -43,26 +41,27 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="Dxb-Bg-7mn"/>
+                                </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Fh-bv-3Nt">
-                                <frame key="frameInset" minX="130" width="893" height="768"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Fh-bv-3Nt">
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vYG-RG-xvk">
-                                    <size key="itemSize" width="207" height="222"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="vYG-RG-xvk">
+                                    <size key="itemSize" width="250" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                    <inset key="sectionInset" minX="40" minY="20" maxX="40" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProjectCell" id="abX-B5-9yD">
-                                        <rect key="frame" x="20" y="20" width="250" height="250"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewProject" id="abX-B5-9yD">
+                                        <rect key="frame" x="40" y="20" width="250" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddProject" translatesAutoresizingMaskIntoConstraints="NO" id="2JR-m4-rbH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddProject" translatesAutoresizingMaskIntoConstraints="NO" id="2JR-m4-rbH">
                                                     <frame key="frameInset" width="250" height="250"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -70,42 +69,58 @@
                                         </view>
                                         <size key="customSize" width="250" height="250"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="l6b-Av-9DE">
-                                        <rect key="frame" x="322" y="20" width="250" height="250"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExistingProject" id="l6b-Av-9DE" customClass="ProjectCollectionViewCell" customModule="Drawing" customModuleProvider="target">
+                                        <rect key="frame" x="326" y="20" width="250" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MaiaProject" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-I8-RUD">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-t8-1he">
                                                     <frame key="frameInset" width="250" height="250"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-I8-RUD">
+                                                            <frame key="frameInset" width="250" height="250"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="number of images" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBo-ii-MSp">
+                                                            <frame key="frameInset" minX="130" minY="20" width="102" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.17966585869999999" green="0.81488381409999999" blue="0.28445389789999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="250" height="250"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="J8I-Jn-PE7">
-                                        <rect key="frame" x="623" y="20" width="250" height="250"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MaiaProject" translatesAutoresizingMaskIntoConstraints="NO" id="ba6-Ap-m6h">
-                                                    <frame key="frameInset" width="250" height="250"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <size key="customSize" width="250" height="250"/>
+                                        <connections>
+                                            <outlet property="firstKeyFrame" destination="PYU-I8-RUD" id="FbR-eJ-RWx"/>
+                                            <outlet property="titleLabel" destination="WBo-ii-MSp" id="jE8-CB-Wdv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Fh-bv-3Nt" firstAttribute="leading" secondItem="Irw-a9-iI8" secondAttribute="trailing" id="0Vk-1T-YjJ"/>
+                            <constraint firstItem="Irw-a9-iI8" firstAttribute="leading" secondItem="94d-Yr-cSm" secondAttribute="leading" id="G7z-FW-hS3"/>
+                            <constraint firstItem="2Fh-bv-3Nt" firstAttribute="top" secondItem="94d-Yr-cSm" secondAttribute="top" id="J5G-WM-cTM"/>
+                            <constraint firstAttribute="trailing" secondItem="2Fh-bv-3Nt" secondAttribute="trailing" id="UMO-Oo-nC2"/>
+                            <constraint firstItem="pGR-Fu-f6z" firstAttribute="top" secondItem="Irw-a9-iI8" secondAttribute="bottom" id="ZFx-n3-hUP"/>
+                            <constraint firstItem="pGR-Fu-f6z" firstAttribute="top" secondItem="2Fh-bv-3Nt" secondAttribute="bottom" id="dut-Mq-nF4"/>
+                            <constraint firstItem="Irw-a9-iI8" firstAttribute="top" secondItem="94d-Yr-cSm" secondAttribute="top" id="jYa-Ob-9gz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p0p-0M-1Af"/>
+                    <connections>
+                        <outlet property="collectionView" destination="2Fh-bv-3Nt" id="8Ie-2y-rcy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0V-G9-shl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,7 +294,6 @@
     <resources>
         <image name="Add" width="70" height="70"/>
         <image name="AddProject" width="351" height="350"/>
-        <image name="MaiaProject" width="351" height="349"/>
         <image name="Monster 1" width="58" height="81"/>
         <image name="Palette" width="66" height="378"/>
         <image name="Play Button" width="49" height="49"/>
