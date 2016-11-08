@@ -8,6 +8,8 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>used to save drawings to library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>take photos to animate in app</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

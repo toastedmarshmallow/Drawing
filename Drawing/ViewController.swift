@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
     
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
@@ -155,7 +156,19 @@ class ViewController: UIViewController {
         
     }
     
-
+    
+    @IBAction func openCamera(_ sender: UIButton) {
+        print("here")
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+            print("here2")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB28775C1DD1D3B800CC8710 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28775B1DD1D3B800CC8710 /* homeViewController.swift */; };
 		CBE439D41DCABCC4000C6469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE439D31DCABCC4000C6469 /* AppDelegate.swift */; };
 		CBE439D61DCABCC4000C6469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE439D51DCABCC4000C6469 /* ViewController.swift */; };
 		CBE439D91DCABCC4000C6469 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE439D71DCABCC4000C6469 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB28775B1DD1D3B800CC8710 /* homeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		CBE439D01DCABCC4000C6469 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE439D31DCABCC4000C6469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE439D51DCABCC4000C6469 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB28775D1DD1D3E300CC8710 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBE439D51DCABCC4000C6469 /* ViewController.swift */,
+				CB28775B1DD1D3B800CC8710 /* homeViewController.swift */,
+			);
+			name = viewControllers;
+			sourceTree = "<group>";
+		};
 		CBE439C71DCABCC4000C6469 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE439D31DCABCC4000C6469 /* AppDelegate.swift */,
-				CBE439D51DCABCC4000C6469 /* ViewController.swift */,
+				CB28775D1DD1D3E300CC8710 /* viewControllers */,
 				CBE439D71DCABCC4000C6469 /* Main.storyboard */,
 				CBE439DD1DCABCC4000C6469 /* Assets.xcassets */,
 				CBE439DF1DCABCC4000C6469 /* LaunchScreen.storyboard */,
@@ -265,6 +276,7 @@
 				CBE439D61DCABCC4000C6469 /* ViewController.swift in Sources */,
 				CBE439D41DCABCC4000C6469 /* AppDelegate.swift in Sources */,
 				CBE439DC1DCABCC4000C6469 /* Drawing.xcdatamodeld in Sources */,
+				CB28775C1DD1D3B800CC8710 /* homeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +521,7 @@
 				CBE439FD1DCABCC4000C6469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBE439FE1DCABCC4000C6469 /* Build configuration list for PBXNativeTarget "DrawingTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +530,7 @@
 				CBE43A001DCABCC4000C6469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBE43A011DCABCC4000C6469 /* Build configuration list for PBXNativeTarget "DrawingUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +539,7 @@
 				CBE43A031DCABCC4000C6469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
