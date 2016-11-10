@@ -70,7 +70,7 @@
                                         <size key="customSize" width="250" height="250"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExistingProject" id="l6b-Av-9DE" customClass="ProjectCollectionViewCell" customModule="Drawing" customModuleProvider="target">
-                                        <rect key="frame" x="326" y="20" width="250" height="250"/>
+                                        <rect key="frame" x="325.5" y="20" width="250" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
@@ -146,8 +146,8 @@
                                 <frame key="frameInset" minY="95" width="147" height="646"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="Palette" translatesAutoresizingMaskIntoConstraints="NO" id="NuM-Ex-zrj">
-                                        <frame key="frameInset" minX="1" minY="36" width="99" height="572"/>
+                                    <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="Palette" translatesAutoresizingMaskIntoConstraints="NO" id="NuM-Ex-zrj">
+                                        <frame key="frameInset" minX="1" minY="61" width="99" height="572"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Z-3r-IHh">
@@ -200,11 +200,16 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fh-DN-Mbd">
-                                        <frame key="frameInset" minX="27" minY="534" width="46" height="45"/>
+                                        <frame key="frameInset" minX="27" minY="534" width="46" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEJ-pq-1gC"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIU-0Z-Hga">
+                                        <frame key="frameInset" minX="33" minY="589" width="33" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="DeleteIcon"/>
                                     </button>
                                 </subviews>
                             </view>
@@ -231,13 +236,32 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Play Button"/>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Project" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="tXi-fp-0vj">
-                                        <frame key="frameInset" minX="330" minY="25" width="364" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Project 1" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="tXi-fp-0vj">
+                                        <frame key="frameInset" minX="330" minY="25" width="364" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleAspectFill" fixedFrame="YES" image="GridIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sVT-yo-FHL">
+                                        <frame key="frameInset" minX="873" minY="20" width="45" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKt-fc-60k">
+                                        <frame key="frameInset" minX="873" minY="16" width="46" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="center" fixedFrame="YES" image="Cancel" translatesAutoresizingMaskIntoConstraints="NO" id="oiH-TU-620">
+                                        <frame key="frameInset" minX="31" minY="21" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG4-xX-9Vx">
+                                        <frame key="frameInset" minX="29" minY="19" width="41" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="closeView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zx0-Hu-AqQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -250,6 +274,7 @@
                         <outlet property="blueButton" destination="2nY-eN-Asy" id="Igd-UC-DYM"/>
                         <outlet property="cameraButton" destination="7Fh-DN-Mbd" id="JbY-mD-BPs"/>
                         <outlet property="greenButton" destination="Rh9-g2-4Nk" id="iNS-0t-O4g"/>
+                        <outlet property="gridView" destination="nKt-fc-60k" id="4s6-eh-jRP"/>
                         <outlet property="imageView" destination="66s-Mm-6lX" id="fkP-bS-wmr"/>
                         <outlet property="magentaButton" destination="cs9-30-a9F" id="POU-IC-0Vv"/>
                         <outlet property="nameTextField" destination="tXi-fp-0vj" id="Dle-ii-BYH"/>
@@ -302,8 +327,11 @@
     <resources>
         <image name="Add" width="70" height="70"/>
         <image name="AddProject" width="351" height="350"/>
+        <image name="Cancel" width="37" height="37"/>
+        <image name="DeleteIcon" width="41" height="54"/>
+        <image name="GridIcon" width="24" height="23"/>
         <image name="Monster 1" width="58" height="81"/>
-        <image name="Palette" width="66" height="378"/>
+        <image name="Palette" width="132" height="831"/>
         <image name="Play Button" width="49" height="49"/>
     </resources>
 </document>

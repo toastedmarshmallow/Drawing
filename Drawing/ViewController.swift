@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var gridView: UIButton!
     
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
@@ -176,6 +177,9 @@ UINavigationControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func closeView(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
