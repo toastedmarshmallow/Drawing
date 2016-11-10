@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var magentaButton: UIButton!
