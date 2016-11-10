@@ -31,14 +31,6 @@
                                             </button>
                                         </subviews>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFl-a8-yoz">
-                                        <frame key="frameInset" minX="-22" minY="167" width="167" height="145"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="TBa-He-M8n" kind="presentation" id="wJi-we-Wc0"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -65,6 +57,13 @@
                                                     <frame key="frameInset" width="250" height="250"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFl-a8-yoz">
+                                                    <frame key="frameInset" minY="8" width="242" height="242"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <segue destination="TBa-He-M8n" kind="presentation" id="wJi-we-Wc0"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="250" height="250"/>
@@ -138,7 +137,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66s-Mm-6lX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MaiaProject" translatesAutoresizingMaskIntoConstraints="NO" id="66s-Mm-6lX">
                                 <frame key="frameInset" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -330,6 +329,7 @@
         <image name="Cancel" width="37" height="37"/>
         <image name="DeleteIcon" width="41" height="54"/>
         <image name="GridIcon" width="24" height="23"/>
+        <image name="MaiaProject" width="351" height="349"/>
         <image name="Monster 1" width="58" height="81"/>
         <image name="Palette" width="132" height="831"/>
         <image name="Play Button" width="49" height="49"/>
