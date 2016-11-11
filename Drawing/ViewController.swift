@@ -197,6 +197,8 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //we may need to do some additional logic here: if cell is new then show a blank canvas and point the cell to display the canvas, else if the cell is selected then show the selected color (teal outline), else show light gray outline.
+        
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewKeyFrame", for: indexPath)
             
