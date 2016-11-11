@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var keyFramesViewController: UICollectionView!
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var gridView: UIButton!
@@ -33,7 +35,10 @@ UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        keyFramesViewController.delegate = self
+        keyFramesViewController.dataSource = self
+        keyFramesViewController.backgroundColor = UIColor.clear
+    
     }
     
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -180,6 +185,37 @@ UINavigationControllerDelegate {
     @IBAction func closeView(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    //Collection View Controller Code
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // Once you can fetch projects, change to:
+        // return projects.count + 1
+        return 10
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewKeyFrame", for: indexPath)
+            
+            cell.layer.borderWidth = 2.0
+            cell.layer.borderColor = UIColor(red: 0.31, green: 0.89, blue: 0.76, alpha: 1.0).cgColor
+            
+            return cell
+        } else {
+            let cell = keyFramesViewController.dequeueReusableCell(withReuseIdentifier: "KeyFrameCell", for: indexPath) as! KeyFrameCollectionViewCell
+            
+            cell.layer.borderWidth = 1.0
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            
+            // cell.firstKeyFrame.image = ...
+            
+            return cell
+        }
+    }
+
 
 }
 
