@@ -78,16 +78,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - prepare for Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //settig up the destination view controller to be first in the nav controller
+        //setting up the destination view controller to be first in the nav controller
         let navVC = segue.destination as! UINavigationController
         let destinationViewController = navVC.viewControllers.first as! ViewController
         
         print("I'm about to go!")
-        destinationViewController.modalPresentationStyle = .custom
+        navVC.modalPresentationStyle = .custom
         fadeTransition = FadeTransition()
-        print("222")
-        fadeTransition.duration = 4.0
-        destinationViewController.transitioningDelegate = fadeTransition
+        fadeTransition.duration = 1.0
+        navVC.transitioningDelegate = fadeTransition
+        destinationViewController.image = imageToMove
 
         
 //        if segue.identifier == "showViewController"{
@@ -95,9 +95,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //            destinationViewController.image = imageToMove
 //            destinationViewController.project = project
 //            print("hello")
-//        } 
-//
-//
+//        }
+
+
     }
 
 

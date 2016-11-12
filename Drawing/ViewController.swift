@@ -41,7 +41,7 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         keyFramesViewController.dataSource = self
         keyFramesViewController.backgroundColor = UIColor.clear
         
-        //canvas.image = image
+        canvas.image = image
     
     }
     
