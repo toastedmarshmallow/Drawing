@@ -10,13 +10,13 @@
 		CB28775C1DD1D3B800CC8710 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28775B1DD1D3B800CC8710 /* HomeViewController.swift */; };
 		CB2877681DD2781700CC8710 /* ProjectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2877671DD2781700CC8710 /* ProjectCollectionViewController.swift */; };
 		CB28776A1DD2784C00CC8710 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2877691DD2784C00CC8710 /* ProjectCollectionViewCell.swift */; };
+		CB3DB8251DD6EB5800D4401C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3DB8231DD6EB5800D4401C /* Main.storyboard */; };
 		CB4A37341DD6CB1600090A8A /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A37321DD6CB1600090A8A /* FadeTransition.swift */; };
 		CB4A37351DD6CB1600090A8A /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A37331DD6CB1600090A8A /* BaseTransition.swift */; };
 		CBB165CB1DD5688B0023334A /* KeyFramesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB165CA1DD5688B0023334A /* KeyFramesViewController.swift */; };
 		CBB165CD1DD573430023334A /* KeyFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB165CC1DD573430023334A /* KeyFrameCollectionViewCell.swift */; };
 		CBE439D41DCABCC4000C6469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE439D31DCABCC4000C6469 /* AppDelegate.swift */; };
 		CBE439D61DCABCC4000C6469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE439D51DCABCC4000C6469 /* ViewController.swift */; };
-		CBE439D91DCABCC4000C6469 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE439D71DCABCC4000C6469 /* Main.storyboard */; };
 		CBE439DC1DCABCC4000C6469 /* Drawing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBE439DA1DCABCC4000C6469 /* Drawing.xcdatamodeld */; };
 		CBE439DE1DCABCC4000C6469 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE439DD1DCABCC4000C6469 /* Assets.xcassets */; };
 		CBE439E11DCABCC4000C6469 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE439DF1DCABCC4000C6469 /* LaunchScreen.storyboard */; };
@@ -46,6 +46,7 @@
 		CB2877601DD26DE500CC8710 /* Drawing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drawing-Bridging-Header.h"; sourceTree = "<group>"; };
 		CB2877671DD2781700CC8710 /* ProjectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectCollectionViewController.swift; path = ../ProjectCollectionViewController.swift; sourceTree = "<group>"; };
 		CB2877691DD2784C00CC8710 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB3DB8241DD6EB5800D4401C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB4A37321DD6CB1600090A8A /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		CB4A37331DD6CB1600090A8A /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		CBB165CA1DD5688B0023334A /* KeyFramesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFramesViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		CBE439D01DCABCC4000C6469 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE439D31DCABCC4000C6469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE439D51DCABCC4000C6469 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CBE439D81DCABCC4000C6469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBE439DB1DCABCC4000C6469 /* Drawing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Drawing.xcdatamodel; sourceTree = "<group>"; };
 		CBE439DD1DCABCC4000C6469 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE439E01DCABCC4000C6469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				CB4A37331DD6CB1600090A8A /* BaseTransition.swift */,
 				CBE439D31DCABCC4000C6469 /* AppDelegate.swift */,
 				CB28775D1DD1D3E300CC8710 /* viewControllers */,
-				CBE439D71DCABCC4000C6469 /* Main.storyboard */,
+				CB3DB8231DD6EB5800D4401C /* Main.storyboard */,
 				CB2877691DD2784C00CC8710 /* ProjectCollectionViewCell.swift */,
 				CBB165CC1DD573430023334A /* KeyFrameCollectionViewCell.swift */,
 				CBE439DD1DCABCC4000C6469 /* Assets.xcassets */,
@@ -267,9 +267,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3DB8251DD6EB5800D4401C /* Main.storyboard in Resources */,
 				CBE439E11DCABCC4000C6469 /* LaunchScreen.storyboard in Resources */,
 				CBE439DE1DCABCC4000C6469 /* Assets.xcassets in Resources */,
-				CBE439D91DCABCC4000C6469 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,10 +339,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CBE439D71DCABCC4000C6469 /* Main.storyboard */ = {
+		CB3DB8231DD6EB5800D4401C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CBE439D81DCABCC4000C6469 /* Base */,
+				CB3DB8241DD6EB5800D4401C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

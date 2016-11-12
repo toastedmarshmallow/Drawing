@@ -12,14 +12,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBOutlet weak var collectionView: UICollectionView!
     var imageToMove:UIImage!
+    var coordinatesToPassOn: CGRect!
     var fadeTransition: FadeTransition!
+    var selectedImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.delegate = self
         collectionView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -30,7 +31,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,11 +41,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
+        if indexPath.row == 0
+        {
+            print("I'm the new project")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewProject", for: indexPath)
-            
             return cell
         } else {
+            print("I'm an existing project")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExistingProject", for: indexPath) as! ProjectCollectionViewCell
             
             //once fetch the projects, then change text to number of items
@@ -54,8 +56,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             //once fetch the projects, then change the image to first key frame in the array
             //e.g. cell.firstKeyFrame.image = project.projectForItemAtIndexPAth(indexPath)
+            selectedImageView = cell.firstKeyFrame
             cell.firstKeyFrame.image = #imageLiteral(resourceName: "Monster 1")
-            
             imageToMove = cell.firstKeyFrame.image
             
             return cell
@@ -64,14 +66,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //MARK - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        //if the prototype cell == new project, then just do the segue
-        if indexPath.row == 0 {
-            performSegue(withIdentifier: "newProjectSegue", sender: nil)
-        }
-        //else pass in the project to prepare for segway
-//        let project = project.projectForItemAtIndexPath(indexPath: NSIndexPath)
-//        self.performSegue(withIdentifier: showViewController, sender: project)
+        //let project = projects.projectForItemAtIndexPath(indexPath)
+        //replace nil with project below
+        let attributes = collectionView.layoutAttributesForItem(at: indexPath)
+        let attributesFrame = attributes?.frame
+        let frameToOpenFrom = collectionView.convert(attributesFrame!, to: collectionView.superview)
+       // transitioningDelegate.openingFrame = frameToOpenFrom
+        coordinatesToPassOn = frameToOpenFrom
+        performSegue(withIdentifier: "newProjectSegue", sender: nil)
     }
 
     
@@ -87,15 +89,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         fadeTransition = FadeTransition()
         fadeTransition.duration = 1.0
         navVC.transitioningDelegate = fadeTransition
-        destinationViewController.image = imageToMove
-
         
-//        if segue.identifier == "showViewController"{
-//            let project = sender as! project
-//            destinationViewController.image = imageToMove
-//            destinationViewController.project = project
-//            print("hello")
-//        }
+        destinationViewController.image = imageToMove
 
 
     }

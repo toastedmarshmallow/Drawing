@@ -154,6 +154,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VJa-G9-X9t">
+                                <frame key="frameInset" minY="13" width="1024" height="760"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66s-Mm-6lX">
                                 <frame key="frameInset" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -339,6 +343,7 @@
                         <outlet property="magentaButton" destination="cs9-30-a9F" id="POU-IC-0Vv"/>
                         <outlet property="nameTextField" destination="tXi-fp-0vj" id="Dle-ii-BYH"/>
                         <outlet property="redButton" destination="I6Z-3r-IHh" id="aYj-IQ-Ts5"/>
+                        <outlet property="test" destination="VJa-G9-X9t" id="VU0-yt-xVq"/>
                         <outlet property="whiteButton" destination="e3l-VP-eK7" id="cKR-bE-ePq"/>
                         <outlet property="yellowButton" destination="gN1-Mh-KDF" id="4T6-h8-NMr"/>
                     </connections>

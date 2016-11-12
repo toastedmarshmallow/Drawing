@@ -27,6 +27,8 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var canvas: UIImageView!
     var image: UIImage!
     
+    @IBOutlet weak var test: UIImageView!
+    
     var lastPoint = CGPoint.zero
     var swiped = false
     
@@ -41,7 +43,8 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         keyFramesViewController.dataSource = self
         keyFramesViewController.backgroundColor = UIColor.clear
         
-        canvas.image = image
+        //test.image = image
+        //drawInitialImage()
     
     }
     
@@ -66,7 +69,7 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     
     func drawLines(fromPoint: CGPoint, toPoint: CGPoint){
         
-            let midPoint=self.midPoint(p0: fromPoint, p1: toPoint)
+        let midPoint=self.midPoint(p0: fromPoint, p1: toPoint)
         UIGraphicsBeginImageContext(self.view.frame.size)
         imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         let context = UIGraphicsGetCurrentContext()
@@ -133,15 +136,6 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
             present(ac, animated: true)
         }
     }
-    
-//    func image(image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
-//        let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
-//        
-//        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alertController.addAction(defaultAction)
-//        
-//        present(alertController, animated: true, completion: nil)
-//    }
 
     
     @IBAction func pickedColor(_ sender: UIButton) {
@@ -220,6 +214,14 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
             
             return cell
         }
+    }
+    
+    func drawInitialImage() {
+        let origin = CGPoint(x: view.center.x - image.size.width / 2, y: view.center.y - image.size.height / 2)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        image.draw(in: CGRect(x: origin.x, y: origin.y, width: image.size.width, height: image.size.height))
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
     }
 
 
