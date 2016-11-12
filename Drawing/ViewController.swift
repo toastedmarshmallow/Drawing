@@ -24,6 +24,8 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var blackButton: UIButton!
     @IBOutlet weak var whiteButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var canvas: UIImageView!
+    var image: UIImage!
     
     var lastPoint = CGPoint.zero
     var swiped = false
@@ -38,6 +40,8 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         keyFramesViewController.delegate = self
         keyFramesViewController.dataSource = self
         keyFramesViewController.backgroundColor = UIColor.clear
+        
+        //canvas.image = image
     
     }
     

@@ -61,7 +61,7 @@
                                                     <frame key="frameInset" minY="8" width="242" height="242"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <segue destination="TBa-He-M8n" kind="presentation" id="wJi-we-Wc0"/>
+                                                        <segue destination="TBa-He-M8n" kind="show" identifier="newProjectSegue" id="0ZD-EC-PKD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -75,24 +75,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-t8-1he">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-t8-1he">
                                                     <frame key="frameInset" width="250" height="250"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 1" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-I8-RUD">
                                                             <frame key="frameInset" width="250" height="250"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="number of images" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBo-ii-MSp">
-                                                            <frame key="frameInset" minX="130" minY="20" width="102" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" red="0.17966585869999999" green="0.81488381409999999" blue="0.28445389789999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swg-Rc-lH6">
+                                                            <frame key="frameInset" width="250" height="50"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="fMi-Im-2l5">
+                                                                <frame key="frameInset"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="number of images" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBo-ii-MSp">
+                                                                        <frame key="frameInset" minX="130" minY="15" width="102" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <color key="backgroundColor" red="0.17966585869999999" green="0.81488381409999999" blue="0.28445389789999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <blurEffect style="light"/>
+                                                        </visualEffectView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="swg-Rc-lH6" secondAttribute="trailing" id="Ozb-36-hVt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="swg-Rc-lH6" secondAttribute="bottom" constant="200" id="riZ-dc-hOM"/>
+                                                        <constraint firstItem="swg-Rc-lH6" firstAttribute="leading" secondItem="l6h-t8-1he" secondAttribute="leading" id="w4n-D8-JkX"/>
+                                                        <constraint firstItem="swg-Rc-lH6" firstAttribute="top" secondItem="l6h-t8-1he" secondAttribute="top" id="z02-FG-kMw"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
@@ -100,6 +115,7 @@
                                         <connections>
                                             <outlet property="firstKeyFrame" destination="PYU-I8-RUD" id="FbR-eJ-RWx"/>
                                             <outlet property="titleLabel" destination="WBo-ii-MSp" id="jE8-CB-Wdv"/>
+                                            <outlet property="visualEffectView" destination="swg-Rc-lH6" id="Vra-m7-0gd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -119,6 +135,7 @@
                     <navigationItem key="navigationItem" id="p0p-0M-1Af"/>
                     <connections>
                         <outlet property="collectionView" destination="2Fh-bv-3Nt" id="8Ie-2y-rcy"/>
+                        <segue destination="TBa-He-M8n" kind="show" identifier="showViewController" id="YPZ-xB-qWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0V-G9-shl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,6 +332,7 @@
                         <outlet property="blackButton" destination="Gab-Hd-5gJ" id="lJb-cH-xTb"/>
                         <outlet property="blueButton" destination="2nY-eN-Asy" id="Igd-UC-DYM"/>
                         <outlet property="cameraButton" destination="7Fh-DN-Mbd" id="JbY-mD-BPs"/>
+                        <outlet property="canvas" destination="66s-Mm-6lX" id="FwJ-vv-47E"/>
                         <outlet property="greenButton" destination="Rh9-g2-4Nk" id="iNS-0t-O4g"/>
                         <outlet property="imageView" destination="66s-Mm-6lX" id="fkP-bS-wmr"/>
                         <outlet property="keyFramesViewController" destination="yuU-V5-ocy" id="v4c-2N-M9y"/>
@@ -376,4 +394,7 @@
         <image name="Palette" width="132" height="831"/>
         <image name="Play Button" width="49" height="49"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0ZD-EC-PKD"/>
+    </inferredMetricsTieBreakers>
 </document>

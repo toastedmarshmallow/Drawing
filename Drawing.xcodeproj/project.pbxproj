@@ -10,6 +10,8 @@
 		CB28775C1DD1D3B800CC8710 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28775B1DD1D3B800CC8710 /* HomeViewController.swift */; };
 		CB2877681DD2781700CC8710 /* ProjectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2877671DD2781700CC8710 /* ProjectCollectionViewController.swift */; };
 		CB28776A1DD2784C00CC8710 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2877691DD2784C00CC8710 /* ProjectCollectionViewCell.swift */; };
+		CB4A37341DD6CB1600090A8A /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A37321DD6CB1600090A8A /* FadeTransition.swift */; };
+		CB4A37351DD6CB1600090A8A /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A37331DD6CB1600090A8A /* BaseTransition.swift */; };
 		CBB165CB1DD5688B0023334A /* KeyFramesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB165CA1DD5688B0023334A /* KeyFramesViewController.swift */; };
 		CBB165CD1DD573430023334A /* KeyFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB165CC1DD573430023334A /* KeyFrameCollectionViewCell.swift */; };
 		CBE439D41DCABCC4000C6469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE439D31DCABCC4000C6469 /* AppDelegate.swift */; };
@@ -44,6 +46,8 @@
 		CB2877601DD26DE500CC8710 /* Drawing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drawing-Bridging-Header.h"; sourceTree = "<group>"; };
 		CB2877671DD2781700CC8710 /* ProjectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectCollectionViewController.swift; path = ../ProjectCollectionViewController.swift; sourceTree = "<group>"; };
 		CB2877691DD2784C00CC8710 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB4A37321DD6CB1600090A8A /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		CB4A37331DD6CB1600090A8A /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		CBB165CA1DD5688B0023334A /* KeyFramesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFramesViewController.swift; sourceTree = "<group>"; };
 		CBB165CC1DD573430023334A /* KeyFrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBE439D01DCABCC4000C6469 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,8 @@
 		CBE439D21DCABCC4000C6469 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				CB4A37321DD6CB1600090A8A /* FadeTransition.swift */,
+				CB4A37331DD6CB1600090A8A /* BaseTransition.swift */,
 				CBE439D31DCABCC4000C6469 /* AppDelegate.swift */,
 				CB28775D1DD1D3E300CC8710 /* viewControllers */,
 				CBE439D71DCABCC4000C6469 /* Main.storyboard */,
@@ -289,6 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBB165CB1DD5688B0023334A /* KeyFramesViewController.swift in Sources */,
+				CB4A37351DD6CB1600090A8A /* BaseTransition.swift in Sources */,
+				CB4A37341DD6CB1600090A8A /* FadeTransition.swift in Sources */,
 				CBE439D61DCABCC4000C6469 /* ViewController.swift in Sources */,
 				CBE439D41DCABCC4000C6469 /* AppDelegate.swift in Sources */,
 				CB28776A1DD2784C00CC8710 /* ProjectCollectionViewCell.swift in Sources */,
