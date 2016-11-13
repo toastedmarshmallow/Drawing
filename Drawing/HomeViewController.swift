@@ -87,7 +87,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         print("I'm about to go!")
         navVC.modalPresentationStyle = .custom
         fadeTransition = FadeTransition()
-        fadeTransition.duration = 1.0
+        fadeTransition.duration = 0.8
         navVC.transitioningDelegate = fadeTransition
         
         destinationViewController.image = imageToMove

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet var canvasView: UIView!
     @IBOutlet weak var keyFramesViewController: UICollectionView!
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -27,8 +28,6 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var canvas: UIImageView!
     var image: UIImage!
     
-    @IBOutlet weak var test: UIImageView!
-    
     var lastPoint = CGPoint.zero
     var swiped = false
     
@@ -43,8 +42,7 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         keyFramesViewController.dataSource = self
         keyFramesViewController.backgroundColor = UIColor.clear
         
-        //test.image = image
-        //drawInitialImage()
+        drawInitialImage()
     
     }
     

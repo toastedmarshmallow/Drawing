@@ -154,10 +154,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VJa-G9-X9t">
-                                <frame key="frameInset" minY="13" width="1024" height="760"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66s-Mm-6lX">
                                 <frame key="frameInset" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -337,13 +333,13 @@
                         <outlet property="blueButton" destination="2nY-eN-Asy" id="Igd-UC-DYM"/>
                         <outlet property="cameraButton" destination="7Fh-DN-Mbd" id="JbY-mD-BPs"/>
                         <outlet property="canvas" destination="66s-Mm-6lX" id="FwJ-vv-47E"/>
+                        <outlet property="canvasView" destination="8bC-Xf-vdC" id="bm9-Bf-Y9K"/>
                         <outlet property="greenButton" destination="Rh9-g2-4Nk" id="iNS-0t-O4g"/>
                         <outlet property="imageView" destination="66s-Mm-6lX" id="fkP-bS-wmr"/>
                         <outlet property="keyFramesViewController" destination="yuU-V5-ocy" id="v4c-2N-M9y"/>
                         <outlet property="magentaButton" destination="cs9-30-a9F" id="POU-IC-0Vv"/>
                         <outlet property="nameTextField" destination="tXi-fp-0vj" id="Dle-ii-BYH"/>
                         <outlet property="redButton" destination="I6Z-3r-IHh" id="aYj-IQ-Ts5"/>
-                        <outlet property="test" destination="VJa-G9-X9t" id="VU0-yt-xVq"/>
                         <outlet property="whiteButton" destination="e3l-VP-eK7" id="cKR-bE-ePq"/>
                         <outlet property="yellowButton" destination="gN1-Mh-KDF" id="4T6-h8-NMr"/>
                     </connections>
