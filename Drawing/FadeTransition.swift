@@ -61,10 +61,6 @@ class FadeTransition: BaseTransition {
             containerView.center = CGPoint(x: self.finalFrame.midX, y: self.finalFrame.midY)
             self.tempView.frame = canvasViewController.imageView.frame
             canvasViewController.imageView.isHidden = true
-            
-            //canvasViewController.canvas.image = self.tempView.image
-            //canvasViewController.canvas.frame = self.tempView.frame
-
 
         }) { (finished: Bool) -> Void in
             canvasViewController.imageView.isHidden = false
@@ -79,6 +75,9 @@ class FadeTransition: BaseTransition {
         fromViewController.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 
         UIView.animate(withDuration: duration, animations: {
+            
+            containerView.center = CGPoint(x: self.tempFrame.midX, y: self.tempFrame.midY)
+            
             fromViewController.view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
             fromViewController.view.alpha = 0
 
