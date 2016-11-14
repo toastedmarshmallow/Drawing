@@ -16,11 +16,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var fadeTransition: FadeTransition!
     var selectedImageView: UIImageView!
     
+    var projects: [Project] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        //If projects is nil
+        if populateProjects() != nil {
+            projects = populateProjects()!
+        } else {
+            projects = []
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -37,7 +46,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         // Once you can fetch projects, change to:
         // return projects.count + 1
-        return 6
+        if let projects = populateProjects() {
+            return projects.count + 1
+        } else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,14 +63,18 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             print("I'm an existing project")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExistingProject", for: indexPath) as! ProjectCollectionViewCell
             
+            let currentProject = projects[indexPath.row - 1] //get the project for cell, -1 to make room for new project cell
+            
             //once fetch the projects, then change text to number of items
             //e.g. cell.titleLabel.text = project.titleForItemAtIndexPAth(indexPath)
-            cell.titleLabel.text = "Hello"
+            let numFrames = currentProject.images.count
+            cell.titleLabel.text = "\(numFrames) Drawings"
             
             //once fetch the projects, then change the image to first key frame in the array
             //e.g. cell.firstKeyFrame.image = project.projectForItemAtIndexPAth(indexPath)
+            let firstFrame = currentProject.images[0]
             selectedImageView = cell.firstKeyFrame
-            cell.firstKeyFrame.image = #imageLiteral(resourceName: "Monster 1")
+            cell.firstKeyFrame.image = firstFrame
             imageToMove = cell.firstKeyFrame.image
             
             return cell
@@ -67,13 +84,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let project = projects.projectForItemAtIndexPath(indexPath)
+        let project = projects[indexPath.row - 1]
         //replace nil with project below
         let attributes = collectionView.layoutAttributesForItem(at: indexPath)
         let attributesFrame = attributes?.frame
         let frameToOpenFrom = collectionView.convert(attributesFrame!, to: collectionView.superview)
        // transitioningDelegate.openingFrame = frameToOpenFrom
         coordinatesToPassOn = frameToOpenFrom
-        performSegue(withIdentifier: "newProjectSegue", sender: nil)
+        performSegue(withIdentifier: "newProjectSegue", sender: project)
     }
 
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAE980141DD94C7200417F79 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE980131DD94C7200417F79 /* SaveData.swift */; };
+		BAE980161DD94C7C00417F79 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE980151DD94C7C00417F79 /* Project.swift */; };
 		CB28775C1DD1D3B800CC8710 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28775B1DD1D3B800CC8710 /* HomeViewController.swift */; };
 		CB2877681DD2781700CC8710 /* ProjectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2877671DD2781700CC8710 /* ProjectCollectionViewController.swift */; };
 		CB28776A1DD2784C00CC8710 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2877691DD2784C00CC8710 /* ProjectCollectionViewCell.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BAE980131DD94C7200417F79 /* SaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		BAE980151DD94C7C00417F79 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		CB28775B1DD1D3B800CC8710 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB2877601DD26DE500CC8710 /* Drawing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drawing-Bridging-Header.h"; sourceTree = "<group>"; };
 		CB2877671DD2781700CC8710 /* ProjectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectCollectionViewController.swift; path = ../ProjectCollectionViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				CBE439DF1DCABCC4000C6469 /* LaunchScreen.storyboard */,
 				CBE439E21DCABCC4000C6469 /* Info.plist */,
 				CBE439DA1DCABCC4000C6469 /* Drawing.xcdatamodeld */,
+				BAE980131DD94C7200417F79 /* SaveData.swift */,
+				BAE980151DD94C7C00417F79 /* Project.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 				CBB165CB1DD5688B0023334A /* KeyFramesViewController.swift in Sources */,
 				CB4A37351DD6CB1600090A8A /* BaseTransition.swift in Sources */,
 				CB4A37341DD6CB1600090A8A /* FadeTransition.swift in Sources */,
+				BAE980141DD94C7200417F79 /* SaveData.swift in Sources */,
 				CBE439D61DCABCC4000C6469 /* ViewController.swift in Sources */,
 				CBE439D41DCABCC4000C6469 /* AppDelegate.swift in Sources */,
 				CB28776A1DD2784C00CC8710 /* ProjectCollectionViewCell.swift in Sources */,
@@ -304,6 +311,7 @@
 				CBE439DC1DCABCC4000C6469 /* Drawing.xcdatamodeld in Sources */,
 				CB28775C1DD1D3B800CC8710 /* HomeViewController.swift in Sources */,
 				CB2877681DD2781700CC8710 /* ProjectCollectionViewController.swift in Sources */,
+				BAE980161DD94C7C00417F79 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
