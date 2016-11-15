@@ -120,12 +120,15 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     @IBAction func addNewKeyFrame(_ sender: UIButton) {
-        
-        detailProject!.images.append(self.imageView.image!)
+        if self.imageView.image == nil {
+            detailProject!.images.append(UIImage(named: "whiteCanvas.png")!)
+        } else {
+            detailProject!.images.append(self.imageView.image!)
+        }
         self.imageView.image = nil
         
         //save project
-        //saveProject(projectSave: detailProject)
+        saveProject(projectSave: detailProject!)
 
         self.keyFramesViewController.reloadData()
     }
@@ -190,6 +193,20 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         dismiss(animated: true, completion: nil)
     }
     
+
+    @IBAction func didPressPlayButton(_ sender: UIButton) {
+        if self.imageView.image != nil{
+            detailProject!.images.append(self.imageView.image!)
+            saveProject(projectSave: detailProject!)
+        }
+        performSegue(withIdentifier: "segueToAnimation", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! AnimationViewController
+        
+        destinationVC.projectToAnimate = self.detailProject
+    }
     
     //Collection View Controller Code
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -216,11 +233,10 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
             
             cell.layer.borderWidth = 1.0
             cell.layer.borderColor = UIColor.lightGray.cgColor
-            cell.keyFrameImageCell.image = detailProject!.images[indexPath.row - 1]
+            //reverse image display order in collection view
+            let countImages = detailProject!.images.count
+            cell.keyFrameImageCell.image = detailProject!.images[countImages - indexPath.row]
 
-    
-            // cell.firstKeyFrame.image = ...
-            
             return cell
         }
     }

@@ -39,12 +39,23 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 saveProject(projectSave: curProject)
                 saveProject(projectSave: cur2Project)
         
-        //If projects is nil
         if populateProjects() != nil {
             projects = populateProjects()!
         } else {
             projects = []
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("I appear")
+        //If projects is nil
+        if populateProjects() != nil {
+            print("hello")
+            projects = populateProjects()!
+        } else {
+            projects = []
+        }
+        collectionView.reloadData()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -53,10 +64,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         // Once you can fetch projects, change to:
@@ -78,6 +85,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else {
             print("I'm an existing project")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExistingProject", for: indexPath) as! ProjectCollectionViewCell
+            
+            //print(projects)
             
             let currentProject = projects[indexPath.row - 1] //get the project for cell, -1 to make room for new project cell
             
@@ -105,7 +114,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if indexPath.row == 0 {
             var blankProject = Project(name: "", images: [])
             blankProject.untitled()
-            imageToMove = blankProject.images[0]
+            selectedProject = blankProject
+            imageToMove = UIImage(named: "whiteCanvas.png")
             print(indexPath.row)
         } else {
             selectedProject = projects[indexPath.row - 1]
