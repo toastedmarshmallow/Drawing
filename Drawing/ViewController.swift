@@ -36,11 +36,16 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     var blue:CGFloat = 0.0
 
     @IBOutlet weak var imageView: UIImageView!
+    
+    var detailProject: Project? //detailed project to work on  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         keyFramesViewController.delegate = self
         keyFramesViewController.dataSource = self
         keyFramesViewController.backgroundColor = UIColor.clear
+        
+        print("this is the project \(detailProject)")
         
         drawInitialImage()
     
@@ -116,10 +121,13 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     
     @IBAction func addNewKeyFrame(_ sender: UIButton) {
         
-        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-
-        
+        detailProject!.images.append(self.imageView.image!)
         self.imageView.image = nil
+        
+        //save project
+        //saveProject(projectSave: detailProject)
+
+        self.keyFramesViewController.reloadData()
     }
     
     func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
@@ -185,10 +193,11 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     
     //Collection View Controller Code
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        // Once you can fetch projects, change to:
-        // return projects.count + 1
-        return 10
+        if detailProject != nil {
+            return detailProject!.images.count + 1
+        } else {
+            return 1 
+        }
     }
     
     
@@ -207,7 +216,9 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
             
             cell.layer.borderWidth = 1.0
             cell.layer.borderColor = UIColor.lightGray.cgColor
-            
+            cell.keyFrameImageCell.image = detailProject!.images[indexPath.row - 1]
+
+    
             // cell.firstKeyFrame.image = ...
             
             return cell
