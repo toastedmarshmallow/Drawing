@@ -18,25 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Irw-a9-iI8">
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeN-SG-aC8">
-                                        <frame key="frameInset" minX="8" minY="8" width="107" height="89"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N8-JX-xF6">
-                                                <frame key="frameInset" minX="17" minY="8" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="Monster 1"/>
-                                            </button>
-                                        </subviews>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="Dxb-Bg-7mn"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Fh-bv-3Nt">
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="vYG-RG-xvk">
@@ -106,6 +87,104 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view alpha="0.69999999999999996" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AP9-4T-paX">
+                                <frame key="frameInset" minX="-901" width="901" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zoë" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nh-ep-Lnj">
+                                        <frame key="frameInset" minX="40" minY="32" width="358" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hiya! we love monsters… which one are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOv-wU-MX0">
+                                        <frame key="frameInset" minX="40" minY="180" width="713" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 1A" translatesAutoresizingMaskIntoConstraints="NO" id="BgY-1W-spb">
+                                        <frame key="frameInset" minX="40" minY="270" width="130" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 2" translatesAutoresizingMaskIntoConstraints="NO" id="8xh-IW-IGy">
+                                        <frame key="frameInset" minX="194" minY="270" width="130" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 3" translatesAutoresizingMaskIntoConstraints="NO" id="v1r-7g-F2E">
+                                        <frame key="frameInset" minX="347" minY="270" width="130" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 4" translatesAutoresizingMaskIntoConstraints="NO" id="Mce-zS-baq">
+                                        <frame key="frameInset" minX="500" minY="270" width="130" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 5" translatesAutoresizingMaskIntoConstraints="NO" id="zoZ-ee-4Bn">
+                                        <frame key="frameInset" minX="654" minY="270" width="130" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tew-PZ-wYS">
+                                        <frame key="frameInset" minX="194" minY="270" width="130" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="didSelectMonster:" destination="n6X-wJ-dDA" eventType="touchUpInside" id="nmF-pd-afA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO2-cE-fHH">
+                                        <frame key="frameInset" minX="347" minY="279" width="130" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="didSelectMonster:" destination="n6X-wJ-dDA" eventType="touchUpInside" id="nGa-sL-xDn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWU-wG-aHv">
+                                        <frame key="frameInset" minX="500" minY="270" width="130" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="didSelectMonster:" destination="n6X-wJ-dDA" eventType="touchUpInside" id="RId-hV-5N0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlL-fG-D33">
+                                        <frame key="frameInset" minX="654" minY="279" width="130" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="didSelectMonster:" destination="n6X-wJ-dDA" eventType="touchUpInside" id="GVV-KK-igZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-3M-1cr">
+                                        <frame key="frameInset" minX="42" minY="271" width="126" height="126"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="didSelectMonster:" destination="n6X-wJ-dDA" eventType="touchUpInside" id="Oaa-dj-PfZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Irw-a9-iI8">
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeN-SG-aC8">
+                                        <frame key="frameInset" minX="8" minY="8" width="107" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N8-JX-xF6">
+                                                <frame key="frameInset" minX="17" minY="8" width="90" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="Monster 1C"/>
+                                                <connections>
+                                                    <action selector="tapProfile:" destination="n6X-wJ-dDA" eventType="touchUpInside" id="DQi-AR-NLY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="Dxb-Bg-7mn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -121,6 +200,13 @@
                     <navigationItem key="navigationItem" id="p0p-0M-1Af"/>
                     <connections>
                         <outlet property="collectionView" destination="2Fh-bv-3Nt" id="8Ie-2y-rcy"/>
+                        <outlet property="monster1" destination="BgY-1W-spb" id="fKa-4Q-8Cb"/>
+                        <outlet property="monster2" destination="8xh-IW-IGy" id="Bau-he-zDk"/>
+                        <outlet property="monster3" destination="v1r-7g-F2E" id="jio-28-RaR"/>
+                        <outlet property="monster4" destination="Mce-zS-baq" id="knn-wa-6dQ"/>
+                        <outlet property="monster5" destination="zoZ-ee-4Bn" id="Uzg-Sm-LfE"/>
+                        <outlet property="monsterView" destination="AP9-4T-paX" id="Pg6-xc-iXE"/>
+                        <outlet property="profileButton" destination="4N8-JX-xF6" id="8gX-67-GO3"/>
                         <segue destination="TBa-He-M8n" kind="show" identifier="showViewController" id="YPZ-xB-qWb"/>
                     </connections>
                 </viewController>
@@ -378,6 +464,12 @@
         <image name="DeleteIcon" width="41" height="54"/>
         <image name="MaiaProject" width="351" height="349"/>
         <image name="Monster 1" width="58" height="81"/>
+        <image name="Monster 1A" width="126" height="126"/>
+        <image name="Monster 1C" width="58" height="81"/>
+        <image name="Monster 2" width="126" height="126"/>
+        <image name="Monster 3" width="126" height="126"/>
+        <image name="Monster 4" width="126" height="126"/>
+        <image name="Monster 5" width="126" height="126"/>
         <image name="Palette" width="132" height="831"/>
         <image name="Play Button" width="49" height="49"/>
     </resources>

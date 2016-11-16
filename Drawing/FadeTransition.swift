@@ -59,6 +59,7 @@ class FadeTransition: BaseTransition {
             canvasViewController.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             
             containerView.center = CGPoint(x: self.finalFrame.midX, y: self.finalFrame.midY)
+            //self.tempView.frame = containerView.convert(containerView.center, to: canvasViewController.view)
             self.tempView.frame = canvasViewController.imageView.frame
             canvasViewController.imageView.isHidden = true
 
