@@ -56,16 +56,16 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 1" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-I8-RUD">
                                                             <frame key="frameInset" width="250" height="250"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </imageView>
-                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swg-Rc-lH6">
+                                                        <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swg-Rc-lH6">
                                                             <frame key="frameInset" width="250" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="fMi-Im-2l5">
                                                                 <frame key="frameInset"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </view>
-                                                            <blurEffect style="light"/>
+                                                            <blurEffect style="extraLight"/>
                                                         </visualEffectView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="number of images" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBo-ii-MSp">
                                                             <frame key="frameInset" minX="18" minY="12" width="214" height="27"/>
@@ -298,6 +298,9 @@
                                         <frame key="frameInset" minX="33" minY="589" width="33" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="DeleteIcon"/>
+                                        <connections>
+                                            <action selector="didPressDeleteFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHQ-Pi-GOt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -374,6 +377,9 @@
                                         <frame key="frameInset" minX="948" minY="16" width="49" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Play Button"/>
+                                        <connections>
+                                            <action selector="didPressPlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Qd-rg-Dh6"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Project 1" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="tXi-fp-0vj">
                                         <frame key="frameInset" minX="330" minY="25" width="364" height="32"/>
@@ -381,13 +387,16 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="didEndEditingNameField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="79O-hu-M4s"/>
+                                        </connections>
                                     </textField>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="center" fixedFrame="YES" image="Cancel" translatesAutoresizingMaskIntoConstraints="NO" id="oiH-TU-620">
                                         <frame key="frameInset" minX="31" minY="21" width="37" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG4-xX-9Vx">
-                                        <frame key="frameInset" minX="29" minY="19" width="41" height="39"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG4-xX-9Vx">
+                                        <frame key="frameInset" minX="31" minY="20" width="37" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="closeView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zx0-Hu-AqQ"/>
@@ -414,11 +423,86 @@
                         <outlet property="redButton" destination="I6Z-3r-IHh" id="aYj-IQ-Ts5"/>
                         <outlet property="whiteButton" destination="e3l-VP-eK7" id="cKR-bE-ePq"/>
                         <outlet property="yellowButton" destination="gN1-Mh-KDF" id="4T6-h8-NMr"/>
+                        <segue destination="MqS-at-30h" kind="presentation" identifier="segueToAnimation" id="Wqm-Eu-ReI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586.1328125" y="137.5"/>
+            <point key="canvasLocation" x="1596.6796875" y="137.5"/>
+        </scene>
+        <!--Animation View Controller-->
+        <scene sceneID="Ofy-7Q-lqn">
+            <objects>
+                <viewController id="MqS-at-30h" customClass="AnimationViewController" customModule="Drawing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yOO-jc-iCh"/>
+                        <viewControllerLayoutGuide type="bottom" id="5bA-6e-Wr0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b7W-Yt-QYG">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="center" fixedFrame="YES" image="Cancel" translatesAutoresizingMaskIntoConstraints="NO" id="1rL-LK-sUX">
+                                <frame key="frameInset" minX="31" minY="21" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upp-sd-3pa">
+                                <frame key="frameInset" minX="29" minY="19" width="41" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="closeView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OLU-Bx-f6S"/>
+                                    <action selector="didPressCancel:" destination="MqS-at-30h" eventType="touchUpInside" id="aFK-2E-hJd"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-kt-eta">
+                                <frame key="frameInset" minX="118" minY="92" width="788" height="531"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW5-X6-Mvj">
+                                <frame key="frameInset" minX="437" minY="651" width="25" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Rewind"/>
+                                <connections>
+                                    <action selector="didPressBackward:" destination="MqS-at-30h" eventType="touchUpInside" id="fbF-pR-WH0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPa-sl-xGM">
+                                <frame key="frameInset" minX="374" minY="651" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Settings"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUx-ms-pGs">
+                                <frame key="frameInset" minX="625" minY="653" width="17" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Share"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ty-7r-qdJ">
+                                <frame key="frameInset" minX="562" minY="651" width="25" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Forward"/>
+                                <connections>
+                                    <action selector="didPressForward:" destination="MqS-at-30h" eventType="touchUpInside" id="4GQ-Tj-bzK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ph-7a-eP3">
+                                <frame key="frameInset" minX="502" minY="651" width="20" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Pause"/>
+                                <connections>
+                                    <action selector="didPressPausePlay:" destination="MqS-at-30h" eventType="touchUpInside" id="Dks-2A-JmO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="frameImageView" destination="xmS-kt-eta" id="kcc-N7-qxw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ss-UD-iqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2250" y="136.71875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dQM-a4-FnR">
@@ -462,6 +546,7 @@
         <image name="AddProject" width="351" height="350"/>
         <image name="Cancel" width="37" height="37"/>
         <image name="DeleteIcon" width="41" height="54"/>
+        <image name="Forward" width="52" height="34"/>
         <image name="MaiaProject" width="351" height="349"/>
         <image name="Monster 1" width="58" height="81"/>
         <image name="Monster 1A" width="126" height="126"/>
@@ -471,6 +556,10 @@
         <image name="Monster 4" width="126" height="126"/>
         <image name="Monster 5" width="126" height="126"/>
         <image name="Palette" width="132" height="831"/>
+        <image name="Pause" width="32" height="40"/>
         <image name="Play Button" width="49" height="49"/>
+        <image name="Rewind" width="52" height="34"/>
+        <image name="Settings" width="38" height="38"/>
+        <image name="Share" width="26" height="38"/>
     </resources>
 </document>

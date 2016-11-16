@@ -24,7 +24,7 @@ func saveProject(projectSave: Project){
                 if !fileManager.fileExists(atPath: projectsURL.absoluteString){
                     do {
                         try fileManager.createDirectory(atPath: projectURL.path, withIntermediateDirectories: true, attributes: nil)
-                        print("Project " + projectSave.name + " Folder Created")
+                        //print("Project " + projectSave.name + " Folder Created")
                         
                         for (index, image) in projectSave.images.enumerated(){
                             let imageName = projectSave.name + "_\(index).jpg"
@@ -36,10 +36,10 @@ func saveProject(projectSave: Project){
                             
                             
                             //let testImage = UIImage(contentsOfFile: imagePath.absoluteString)
-                            print("saved images")
-                            print(imagePath)
-                            print(image)
-                            print(try fileManager.contentsOfDirectory(at: projectURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles))
+                            //print("saved images")
+                            //print(imagePath)
+                            //print(image)
+                            //print(try fileManager.contentsOfDirectory(at: projectURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles))
                         }
                     } catch let error as NSError {
                         print(error.localizedDescription)
@@ -66,13 +66,13 @@ func populateProjects() -> [Project]?{
         do {
             let projectURLs = try FileManager.default.contentsOfDirectory(at: projectDirectory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles) //get array of project urls within projects folder
             
-            print(projectURLs)
+            //print(projectURLs)
             
             var projects: [Project] = []
             for projectURL in projectURLs {
                 let imageURLs = try FileManager.default.contentsOfDirectory(at: projectURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles) //get array of image urls within image folder
                 
-                print(imageURLs)
+                //print(imageURLs)
                 
                 var images: [UIImage] = []
                 for imageURL in imageURLs {
@@ -80,7 +80,7 @@ func populateProjects() -> [Project]?{
                     let imageData = try! Data(contentsOf: imageURL)
                     
                     images.append(UIImage(data: imageData)!) //fill images array with images from path
-                    print("image url" + imageURL.absoluteString)
+                    //print("image url" + imageURL.absoluteString)
                     
                 }
                 projects.append(Project(name: projectURL.pathComponents.last ?? "", images: images))
@@ -95,7 +95,37 @@ func populateProjects() -> [Project]?{
     }
 }
 
-func clearProjects() {
-    //clear projects for testing still working on this
+func deleteProject(projectDelete: Project) {
+    let fileManager = FileManager.default
+    if let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
+        let documentURL = URL(fileURLWithPath: documentPath, isDirectory: true)
+        let projectsURL = documentURL.appendingPathComponent("Projects")
+        
+        if !fileManager.fileExists(atPath: projectsURL.absoluteString){
+            do {
+                try fileManager.createDirectory(atPath: projectsURL.path, withIntermediateDirectories: true, attributes: nil)
+                print("Projects Folder Created")
+                let projectURL = projectsURL.appendingPathComponent(projectDelete.name)
+                
+                if !fileManager.fileExists(atPath: projectsURL.absoluteString){
+                    do {
+                        try fileManager.removeItem(at: projectURL)
+
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+                }else{
+                    print("Project already Created")
+                }
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }else{
+            print("Project already Created")
+        }
+    }
 }
+
+
     

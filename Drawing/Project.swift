@@ -35,6 +35,6 @@ struct Project {
             self.name = "My Project"
         }
 
-        self.images.append(UIImage(named: "whiteCanvas.png")!)
+        //self.images.append(UIImage(named: "whiteCanvas.png")!)
     }
 }
