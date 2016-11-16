@@ -27,7 +27,7 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var canvas: UIImageView!
     var image: UIImage!
-    
+    var homeVC: HomeViewController?
     var lastPoint = CGPoint.zero
     var swiped = false
     
@@ -37,7 +37,11 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
 
     @IBOutlet weak var imageView: UIImageView!
     
+    var imagePicker: UIImagePickerController!
+    
     var detailProject: Project? //detailed project to work on  
+    var selectedCellIndexRow = 0
+    var currentCellIndexRow = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +50,9 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         keyFramesViewController.backgroundColor = UIColor.clear
         
         print("this is the project \(detailProject)")
-        
+
         drawInitialImage()
+        nameTextField.text = detailProject!.name
     
     }
     
@@ -60,6 +65,8 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
             return true
         }
     }
+    
+    //Touch Canvas Logic
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -119,20 +126,6 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-    @IBAction func addNewKeyFrame(_ sender: UIButton) {
-        if self.imageView.image == nil {
-            detailProject!.images.append(UIImage(named: "whiteCanvas.png")!)
-        } else {
-            detailProject!.images.append(self.imageView.image!)
-        }
-        self.imageView.image = nil
-        
-        //save project
-        saveProject(projectSave: detailProject!)
-
-        self.keyFramesViewController.reloadData()
-    }
-    
     func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             // we got back an error!
@@ -171,34 +164,58 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         
     }
     
+    func drawInitialImage() {
+        let origin = CGPoint(x: view.center.x - image.size.width / 2, y: view.center.y - image.size.height / 2)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        image.draw(in: CGRect(x: origin.x, y: origin.y, width: image.size.width, height: image.size.height))
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
+    
+    //Button Logic
     
     @IBAction func openCamera(_ sender: UIButton) {
         print("here")
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            let imagePicker = UIImagePickerController()
+            imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
-            print("here2")
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
-
+    
     @IBAction func closeView(_ sender: UIButton) {
+        deleteProject(projectDelete: detailProject!)
+        saveProject(projectSave: detailProject!)
+        if let homeVC = self.homeVC {
+            if populateProjects() != nil {
+                print("hello")
+                homeVC.projects = populateProjects()!
+            } else {
+                homeVC.projects = []
+            }
+            homeVC.collectionView.reloadData()
+        }
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addNewKeyFrame(_ sender: UIButton) {
+        detailProject!.images.append(self.imageView.image!)
+        self.imageView.image = nil
+        
+        //save project
+        saveProject(projectSave: detailProject!)
+        self.keyFramesViewController.reloadData()
     }
     
 
     @IBAction func didPressPlayButton(_ sender: UIButton) {
-        if self.imageView.image != nil{
-            detailProject!.images.append(self.imageView.image!)
-            saveProject(projectSave: detailProject!)
-        }
         performSegue(withIdentifier: "segueToAnimation", sender: nil)
     }
     
@@ -208,10 +225,31 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
         destinationVC.projectToAnimate = self.detailProject
     }
     
+    @IBAction func didPressDeleteFrame(_ sender: UIButton) {
+        deleteProjectFrame(deleteFrameIndexRow: currentCellIndexRow - 1)
+        
+        if detailProject!.images.count == 0 {
+            self.imageView.image = UIImage(named: "whiteCanvas.png")
+        } else {
+            self.imageView.image = detailProject!.images[currentCellIndexRow - 1]
+        }
+        keyFramesViewController.reloadData()
+    }
+    
+    @IBAction func didEndEditingNameField(_ sender: UITextField) {
+        deleteProject(projectDelete: detailProject!)
+        detailProject!.name = nameTextField.text!
+        saveProject(projectSave: detailProject!)
+    }
+    
     //Collection View Controller Code
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if detailProject != nil {
-            return detailProject!.images.count + 1
+            if detailProject!.images == [] {
+                return 1
+            } else {
+                return detailProject!.images.count + 1
+            }
         } else {
             return 1 
         }
@@ -221,7 +259,7 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //we may need to do some additional logic here: if cell is new then show a blank canvas and point the cell to display the canvas, else if the cell is selected then show the selected color (teal outline), else show light gray outline.
         
-        if indexPath.row == 0 {
+        if detailProject!.images == [] {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewKeyFrame", for: indexPath)
             
             cell.layer.borderWidth = 2.0
@@ -229,26 +267,61 @@ UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSo
             
             return cell
         } else {
-            let cell = keyFramesViewController.dequeueReusableCell(withReuseIdentifier: "KeyFrameCell", for: indexPath) as! KeyFrameCollectionViewCell
+            if indexPath.row == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewKeyFrame", for: indexPath)
+                
+                if indexPath.row == currentCellIndexRow {
+                    cell.layer.borderWidth = 2.0
+                    cell.layer.borderColor = UIColor(red: 0.31, green: 0.89, blue: 0.76, alpha: 1.0).cgColor
+                } else {
+                    cell.layer.borderWidth = 1.0
+                    cell.layer.borderColor = UIColor.lightGray.cgColor
+                }
             
-            cell.layer.borderWidth = 1.0
-            cell.layer.borderColor = UIColor.lightGray.cgColor
-            //reverse image display order in collection view
-            let countImages = detailProject!.images.count
-            cell.keyFrameImageCell.image = detailProject!.images[countImages - indexPath.row]
+                return cell
+            } else {
+                let cell = keyFramesViewController.dequeueReusableCell(withReuseIdentifier: "KeyFrameCell", for: indexPath) as! KeyFrameCollectionViewCell
+                
+                if indexPath.row == currentCellIndexRow {
+                    cell.layer.borderWidth = 2.0
+                    cell.layer.borderColor = UIColor(red: 0.31, green: 0.89, blue: 0.76, alpha: 1.0).cgColor
+                } else {
+                    cell.layer.borderWidth = 1.0
+                    cell.layer.borderColor = UIColor.lightGray.cgColor
+                }
+    
+                cell.keyFrameImageCell.image = detailProject!.images[indexPath.row - 1]
 
-            return cell
+                return cell
+            }
         }
+
+    }
+
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if currentCellIndexRow != 0 {
+            editProjectFrame(editFrameIndexRow: currentCellIndexRow, frame: self.imageView.image!)
+        }
+
+        if indexPath.row == 0 {
+            self.imageView.image = UIImage(named: "blankCanvas.png")
+        }else{
+            self.imageView.image = detailProject!.images[indexPath.row - 1]
+        }
+        
+        currentCellIndexRow = indexPath.row
+        
+        collectionView.reloadData()
     }
     
-    func drawInitialImage() {
-        let origin = CGPoint(x: view.center.x - image.size.width / 2, y: view.center.y - image.size.height / 2)
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        image.draw(in: CGRect(x: origin.x, y: origin.y, width: image.size.width, height: image.size.height))
-        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+// Utility methods for editing and deleted project images array
+    func editProjectFrame(editFrameIndexRow: Int, frame: UIImage){
+        detailProject!.images[editFrameIndexRow - 1] = frame
     }
-
-
+    
+    func deleteProjectFrame(deleteFrameIndexRow: Int){
+        detailProject!.images.remove(at: deleteFrameIndexRow)
+    }
 }
 

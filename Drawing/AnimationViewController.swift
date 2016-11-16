@@ -18,7 +18,6 @@ class AnimationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         animateProject(project: projectToAnimate, animateFrame: frameImageView, duration: animationDuration)
     }
     

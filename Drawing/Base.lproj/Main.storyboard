@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JKI-Pa-yYD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JKI-Pa-yYD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pGR-Fu-f6z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="94d-Yr-cSm">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Irw-a9-iI8">
@@ -62,7 +62,7 @@
                                         <size key="customSize" width="250" height="250"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExistingProject" id="l6b-Av-9DE" customClass="ProjectCollectionViewCell" customModule="Drawing" customModuleProvider="target">
-                                        <rect key="frame" x="344" y="20" width="250" height="250"/>
+                                        <rect key="frame" x="326" y="20" width="250" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
@@ -137,7 +137,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66s-Mm-6lX">
@@ -212,6 +212,9 @@
                                         <frame key="frameInset" minX="33" minY="589" width="33" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="DeleteIcon"/>
+                                        <connections>
+                                            <action selector="didPressDeleteFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHQ-Pi-GOt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -298,6 +301,9 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="didEndEditingNameField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="79O-hu-M4s"/>
+                                        </connections>
                                     </textField>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="center" fixedFrame="YES" image="Cancel" translatesAutoresizingMaskIntoConstraints="NO" id="oiH-TU-620">
                                         <frame key="frameInset" minX="31" minY="21" width="37" height="37"/>
@@ -336,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1597" y="138"/>
+            <point key="canvasLocation" x="1596.6796875" y="137.5"/>
         </scene>
         <!--Animation View Controller-->
         <scene sceneID="Ofy-7Q-lqn">
@@ -347,7 +353,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5bA-6e-Wr0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b7W-Yt-QYG">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="center" fixedFrame="YES" image="Cancel" translatesAutoresizingMaskIntoConstraints="NO" id="1rL-LK-sUX">

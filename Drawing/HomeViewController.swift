@@ -25,6 +25,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        /*
+                //Test Projects
                 var curProject = Project(name: "stick", images: [])
                 curProject.name = "Stick"
         
@@ -38,6 +40,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
                 saveProject(projectSave: curProject)
                 saveProject(projectSave: cur2Project)
+        */
         
         if populateProjects() != nil {
             projects = populateProjects()!
@@ -45,19 +48,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             projects = []
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("I appear")
-        //If projects is nil
-        if populateProjects() != nil {
-            print("hello")
-            projects = populateProjects()!
-        } else {
-            projects = []
-        }
-        collectionView.reloadData()
-    }
-    
+
     override var prefersStatusBarHidden: Bool {
         get {
             return true
@@ -65,9 +56,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        // Once you can fetch projects, change to:
-        // return projects.count + 1
         if let projects = populateProjects() {
             return projects.count + 1
         } else {
@@ -80,17 +68,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         {
             print("I'm the new project")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewProject", for: indexPath)
-            //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExistingProject", for: indexPath)
             return cell
         } else {
             print("I'm an existing project")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExistingProject", for: indexPath) as! ProjectCollectionViewCell
-            
-            //print(projects)
-            
             let currentProject = projects[indexPath.row - 1] //get the project for cell, -1 to make room for new project cell
-            
-            
+        
             //once fetch the projects, then change text to number of items
             //e.g. cell.titleLabel.text = project.titleForItemAtIndexPAth(indexPath)
             let numFrames = currentProject.images.count
@@ -99,8 +82,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             //once fetch the projects, then change the image to first key frame in the array
             //e.g. cell.firstKeyFrame.image = project.projectForItemAtIndexPAth(indexPath)
             let firstFrame = currentProject.images[0]
+            
             selectedImageView = cell.firstKeyFrame
             cell.firstKeyFrame.image = firstFrame
+            cell.firstKeyFrame.contentMode = UIViewContentMode.scaleAspectFit
             imageToMove = cell.firstKeyFrame.image
             
             return cell
@@ -109,25 +94,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //MARK - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("im on fire")
-        
+
         if indexPath.row == 0 {
             var blankProject = Project(name: "", images: [])
             blankProject.untitled()
             selectedProject = blankProject
             imageToMove = UIImage(named: "whiteCanvas.png")
-            print(indexPath.row)
         } else {
             selectedProject = projects[indexPath.row - 1]
             imageToMove = selectedProject.images[0]
-            print(indexPath.row)
         }
  
-        //replace nil with project below
         let attributes = collectionView.layoutAttributesForItem(at: indexPath)
         let attributesFrame = attributes?.frame
         let frameToOpenFrom = collectionView.convert(attributesFrame!, to: collectionView.superview)
-       // transitioningDelegate.openingFrame = frameToOpenFrom
         coordinatesToPassOn = frameToOpenFrom
 
         performSegue(withIdentifier: "showViewController", sender: nil)
@@ -149,9 +129,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         destinationViewController.image = imageToMove
         destinationViewController.detailProject = selectedProject
+        destinationViewController.homeVC = self
 
 
     }
-
-
 }

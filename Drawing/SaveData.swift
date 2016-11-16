@@ -95,7 +95,37 @@ func populateProjects() -> [Project]?{
     }
 }
 
-func clearProjects() {
-    //clear projects for testing still working on this
+func deleteProject(projectDelete: Project) {
+    let fileManager = FileManager.default
+    if let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
+        let documentURL = URL(fileURLWithPath: documentPath, isDirectory: true)
+        let projectsURL = documentURL.appendingPathComponent("Projects")
+        
+        if !fileManager.fileExists(atPath: projectsURL.absoluteString){
+            do {
+                try fileManager.createDirectory(atPath: projectsURL.path, withIntermediateDirectories: true, attributes: nil)
+                print("Projects Folder Created")
+                let projectURL = projectsURL.appendingPathComponent(projectDelete.name)
+                
+                if !fileManager.fileExists(atPath: projectsURL.absoluteString){
+                    do {
+                        try fileManager.removeItem(at: projectURL)
+
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+                }else{
+                    print("Project already Created")
+                }
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }else{
+            print("Project already Created")
+        }
+    }
 }
+
+
     
