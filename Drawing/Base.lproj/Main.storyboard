@@ -57,13 +57,6 @@
                                                     <frame key="frameInset" width="250" height="250"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFl-a8-yoz">
-                                                    <frame key="frameInset" minY="8" width="242" height="242"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <connections>
-                                                        <segue destination="TBa-He-M8n" kind="show" identifier="newProjectSegue" id="0ZD-EC-PKD"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="250" height="250"/>
@@ -75,39 +68,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-t8-1he">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-t8-1he">
                                                     <frame key="frameInset" width="250" height="250"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monster 1" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-I8-RUD">
                                                             <frame key="frameInset" width="250" height="250"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </imageView>
-                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swg-Rc-lH6">
+                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swg-Rc-lH6">
                                                             <frame key="frameInset" width="250" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="fMi-Im-2l5">
                                                                 <frame key="frameInset"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="number of images" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBo-ii-MSp">
-                                                                        <frame key="frameInset" minX="130" minY="15" width="102" height="21"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <color key="backgroundColor" red="0.17966585869999999" green="0.81488381409999999" blue="0.28445389789999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
                                                             </view>
                                                             <blurEffect style="light"/>
                                                         </visualEffectView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="number of images" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBo-ii-MSp">
+                                                            <frame key="frameInset" minX="18" minY="12" width="214" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="swg-Rc-lH6" secondAttribute="trailing" id="Ozb-36-hVt"/>
-                                                        <constraint firstAttribute="bottom" secondItem="swg-Rc-lH6" secondAttribute="bottom" constant="200" id="riZ-dc-hOM"/>
-                                                        <constraint firstItem="swg-Rc-lH6" firstAttribute="leading" secondItem="l6h-t8-1he" secondAttribute="leading" id="w4n-D8-JkX"/>
-                                                        <constraint firstItem="swg-Rc-lH6" firstAttribute="top" secondItem="l6h-t8-1he" secondAttribute="top" id="z02-FG-kMw"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
@@ -155,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66s-Mm-6lX">
-                                <frame key="frameInset" width="1024" height="768"/>
+                                <frame key="frameInset" minY="70" width="1024" height="698"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bF2-4M-GvG">
@@ -395,7 +381,4 @@
         <image name="Palette" width="132" height="831"/>
         <image name="Play Button" width="49" height="49"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="0ZD-EC-PKD"/>
-    </inferredMetricsTieBreakers>
 </document>
