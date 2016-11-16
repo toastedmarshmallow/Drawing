@@ -90,8 +90,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             //once fetch the projects, then change the image to first key frame in the array
             //e.g. cell.firstKeyFrame.image = project.projectForItemAtIndexPAth(indexPath)
             let firstFrame = currentProject.images[0]
+        
             selectedImageView = cell.firstKeyFrame
             cell.firstKeyFrame.image = firstFrame
+            cell.firstKeyFrame.contentMode = UIViewContentMode.scaleAspectFit
             imageToMove = cell.firstKeyFrame.image
             
             return cell
