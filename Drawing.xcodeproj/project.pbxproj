@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA8E31631DDB908900A00085 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E31621DDB908900A00085 /* AnimationViewController.swift */; };
 		BAE980141DD94C7200417F79 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE980131DD94C7200417F79 /* SaveData.swift */; };
 		BAE980161DD94C7C00417F79 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE980151DD94C7C00417F79 /* Project.swift */; };
 		CB28775C1DD1D3B800CC8710 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28775B1DD1D3B800CC8710 /* HomeViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA8E31621DDB908900A00085 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		BAE980131DD94C7200417F79 /* SaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		BAE980151DD94C7C00417F79 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		CB28775B1DD1D3B800CC8710 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				CB28775B1DD1D3B800CC8710 /* HomeViewController.swift */,
 				CB2877671DD2781700CC8710 /* ProjectCollectionViewController.swift */,
 				CBB165CA1DD5688B0023334A /* KeyFramesViewController.swift */,
+				BA8E31621DDB908900A00085 /* AnimationViewController.swift */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				TargetAttributes = {
 					CBE439CF1DCABCC4000C6469 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 688T272AK5;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -310,6 +314,7 @@
 				CBB165CD1DD573430023334A /* KeyFrameCollectionViewCell.swift in Sources */,
 				CBE439DC1DCABCC4000C6469 /* Drawing.xcdatamodeld in Sources */,
 				CB28775C1DD1D3B800CC8710 /* HomeViewController.swift in Sources */,
+				BA8E31631DDB908900A00085 /* AnimationViewController.swift in Sources */,
 				CB2877681DD2781700CC8710 /* ProjectCollectionViewController.swift in Sources */,
 				BAE980161DD94C7C00417F79 /* Project.swift in Sources */,
 			);
@@ -464,6 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 688T272AK5;
 				INFOPLIST_FILE = Drawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anything.Drawing;
@@ -479,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 688T272AK5;
 				INFOPLIST_FILE = Drawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anything.Drawing;
